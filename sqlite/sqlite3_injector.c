@@ -53,20 +53,20 @@ void* sqlite3Codec(void *pCodec, void *data, unsigned nPageNum, int nMode)
         case 3: // Load a page
             for (int i=0; i < ks->m_pageSize; i++)
             {
-                p[i] ^= 1;//ks->m_key;
+                p[i] ^= ks->m_key;
             }
             return data;
         case 6: // Encrypt a page for the main database file
             for (int i=0; i < ks->m_pageSize; i++)
             {
-                ks->m_page[i] = p[i] ^ 1;//ks->m_key;
+                ks->m_page[i] = p[i] ^ ks->m_key;
             }
             return ks->m_page;
 
         case 7: // Encrypt a page for the journal file
             for (int i=0; i < ks->m_pageSize; i++)
             {
-                ks->m_page[i] = p[i] ^ 1;//ks->m_key;
+                ks->m_page[i] = p[i] ^ ks->m_key;
             }
             return ks->m_page;            
     }
