@@ -15,19 +15,18 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
     return 0;
 }
 
-
 int main(int argc, const char * argv[]) {
 
-    const char * db_name = "encrypted.db";
-    const char * sql_create = "CREATE TABLE hardened_table(_id INTEGER PRIMARY KEY, _text TEXT);";
-    const char * sql_insert = "INSERT INTO hardened_table VALUES(%1%, 'Test string #%2%');";
-    const char * sql_select = "SELECT * FROM hardened_table;";
+    const char * db_name        = "encrypted.db";
+    const char * sql_create     = "CREATE TABLE hardened_table(_id INTEGER PRIMARY KEY, _text TEXT);";
+    const char * sql_insert     = "INSERT INTO hardened_table VALUES(%1%, 'Test string #%2%');";
+    const char * sql_select     = "SELECT * FROM hardened_table;";
     char       * error_text;
-    const unsigned char key[] = "X";
+    const unsigned char key[]   = "X";
     
     sqlite3 *db;
     int result;
-    printf("SQLite injection codec PoC...\n");
+    printf("SQLite injecting encryption PoC...\n");
     
     remove(db_name);
     
