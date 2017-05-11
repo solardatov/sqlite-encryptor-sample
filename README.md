@@ -5,7 +5,7 @@ This sample is based on SQLite amalgamation version 3.13.0.
 You need to have boost 1.60 in home directory to compile this sample without build file changes. Otherwise, feel free to change CMakeLists.txt and specify boost location.
 This sample injects simple xor, but you can take, for example, OpenSSL and use AES or any other block cipher for encryption/decryption.
 
-More details story is available here: http://soldatov.org/openssl/sqlite/2016/07/26/injecting-cipher-sqlite.html
+More detailed story is available here: http://soldatov.org/openssl/sqlite/2016/07/26/injecting-cipher-sqlite.html
 
 ```
 $ git clone https://github.com/solardatov/sqlite-encryptor-sample
